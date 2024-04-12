@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.media.*?>
+
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="460.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.multimedia.reproductor.ReproductorVideoController">
+   <center>
+      <StackPane fx:id="pane" prefHeight="450.0" prefWidth="400.0" BorderPane.alignment="CENTER" style="-fx-background-color: black">
+         <children>
+         <VBox alignment="TOP_CENTER" maxHeight="400.0" prefHeight="400.0" StackPane.alignment="TOP_CENTER">
+            <children>
+               <MediaView fx:id="mediaMediaView" fitHeight="380.0" fitWidth="380.0" onMouseClicked="#onMediaViewClick" BorderPane.alignment="CENTER" />
+            </children>
+         </VBox>
+         <VBox fx:id="vBoxMediaControles" alignment="BOTTOM_CENTER" maxHeight="50.0" prefHeight="50.0" stylesheets="@Style.css" StackPane.alignment="BOTTOM_CENTER">
+            <children>
+               <Slider fx:id="mediaDurationSlider" onMousePressed="#onMediaSlider" HBox.hgrow="ALWAYS" VBox.vgrow="ALWAYS">
+                  <VBox.margin>
+                     <Insets bottom="10.0" />
+                  </VBox.margin>
+               </Slider>
+               <HBox alignment="BOTTOM_CENTER" maxHeight="40.0" prefHeight="30.0">
+                  <children>
+                     <Button fx:id="mediaOpenFileBtn" mnemonicParsing="false" onAction="#onSelectMedia" text="Seleccionar video">
+                        <HBox.margin>
+                           <Insets bottom="7.0" right="7.0" />
+                        </HBox.margin>
+                     </Button>
+                     <Button fx:id="mediaPlayBtn" mnemonicParsing="false" onAction="#onMediaPlayButtonClick" text="Play">
+                        <HBox.margin>
+                           <Insets bottom="7.0" right="7.0" />
+                        </HBox.margin>
+                     </Button>
+                     <Button fx:id="mediaStopBtn" mnemonicParsing="false" onAction="#onMediaStopButtonClick" text="Stop">
+                        <HBox.margin>
+                           <Insets bottom="7.0" right="7.0" />
+                        </HBox.margin>
+                     </Button>
+                     <Slider fx:id="mediaVolumeSlider">
+                        <HBox.margin>
+                           <Insets bottom="10.0" right="5.0" />
+                        </HBox.margin>
+                     </Slider>
+                     <Label fx:id="mediaDurationLabel" text="Duración 00/00">
+                        <HBox.margin>
+                           <Insets bottom="10.0" />
+                        </HBox.margin>
+                     </Label>
+                  </children>
+               </HBox>
+            </children>
+            <StackPane.margin>
+               <Insets />
+            </StackPane.margin>
+         </VBox>
+
+         </children>
+      </StackPane>
+   </center>
+</BorderPane>
